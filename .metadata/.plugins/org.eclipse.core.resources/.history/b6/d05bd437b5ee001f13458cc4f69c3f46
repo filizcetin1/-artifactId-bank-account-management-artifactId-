@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ornek.bank</groupId>
+    <artifactId>bank-account-management</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- Java versiyonunu belirtin -->
+        <java.version>17</java.version>
+        <!-- Spring Boot versiyonu -->
+        <spring-boot.version>3.4.0</spring-boot.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spring Boot Starter Web (Web uygulamaları için) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version> <!-- Versiyon eklendi -->
+        </dependency>
+
+        <!-- Spring Boot Starter Data JPA (Veritabanı işlemleri için) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring-boot.version}</version> <!-- Versiyon eklendi -->
+        </dependency>
+
+        <!-- PostgreSQL Bağımlılığı (Veritabanı için) -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.0</version>
+        </dependency>
+
+        <!-- Spring Boot Starter Test (Testler için) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version> <!-- Versiyon eklendi -->
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Springdoc OpenAPI (Swagger için) -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>2.1.0</version> <!-- Versiyon belirtildi -->
+        </dependency>
+
+        <!-- Liquibase Bağımlılığı (Veritabanı migration işlemleri için) -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.18.0</version> <!-- Versiyon belirtildi -->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Spring Boot Maven Plugin -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version> <!-- Versiyon eklendi -->
+            </plugin>
+
+            <!-- Maven Compiler Plugin (Java versiyonunu belirtmek için) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

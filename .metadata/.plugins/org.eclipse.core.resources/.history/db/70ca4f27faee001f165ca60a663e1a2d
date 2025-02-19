@@ -1,0 +1,33 @@
+package com.example.demo.controller.dto;
+
+import com.example.demo.model.HesapTuru;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.UUID;
+
+@Data
+public class HesapDTO {
+    private UUID id;
+
+    @NotBlank(message = "Kimlik no boş olamaz")
+    @Pattern(regexp = "^[0-9]{11}$", message = "Kimlik no 11 haneli rakamlardan oluşmalıdır")
+    private String hesapSahipKimlikNo;
+
+    @NotBlank(message = "Ad boş olamaz")
+    @Size(max = 50, message = "Ad en fazla 50 karakter olabilir")
+    private String hesapSahipAd;
+
+    @NotBlank(message = "Soyad boş olamaz")
+    @Size(max = 50, message = "Soyad en fazla 50 karakter olabilir")
+    private String hesapSahipSoyad;
+
+    @NotNull(message = "Hesap türü seçilmelidir")
+    private HesapTuru hesapTuru;
+
+    private BigDecimal bakiye = BigDecimal.ZERO;
+}

@@ -1,0 +1,16 @@
+INDEX VERSION 1.134+C:\ornek\.metadata\.plugins\org.eclipse.jdt.core
+345326638.index
+661635751.index
+2890924473.index
+1560099609.index
+2930443390.index
+3098344070.index
+3413725848.index
+1865797976.index
+1905686268.index
+1439668775.index
+3694377883.index
+2900231852.index
+147739365.index
+2746219084.index
+3440824586.index

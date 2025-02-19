@@ -1,0 +1,8 @@
+spring.application.name=bank-account-management
+spring.datasource.url=jdbc:postgresql://localhost:5432/bank_account_management
+spring.datasource.username=postgres
+spring.datasource.password=Filiz123.
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
