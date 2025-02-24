@@ -1,0 +1,7 @@
+package com.example.demo.controller;
+
+public enum HesapTuru {
+    TL,
+    DOLAR,
+    STERLIN
+} 
