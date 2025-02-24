@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+  <changeSet id="1" author="admin">
+    <preConditions onFail="MARK_RAN">
+        <not>
+            <tableExists tableName="hesap"/>
+        </not>
+    </preConditions>
+    <createTable tableName="hesap">
+        <column name="id" type="UUID">
+            <constraints primaryKey="true"/>
+        </column>
+        <column name="hesap_sahip_kimlik_no" type="VARCHAR(11)">
+            <constraints nullable="false" unique="true"/>
+        </column>
+        <column name="hesap_sahip_ad" type="VARCHAR(50)"/>
+        <column name="hesap_sahip_soyad" type="VARCHAR(50)"/>
+        <column name="hesap_turu" type="VARCHAR(20)"/>
+        <column name="bakiye" type="NUMERIC(9,2)"/>
+        <column name="created_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+            <constraints nullable="false"/>
+        </column>
+        <column name="updated_at" type="timestamp" defaultValueComputed="CURRENT_TIMESTAMP">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+  </changeSet>
+
+  <include file="classpath:db/changelog/changes/002-hesap-hareketi-schema.xml"/>
+  <include file="classpath:db/changelog/changes/003-test-data.xml"/>
+
+</databaseChangeLog>

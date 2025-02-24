@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="003" author="developer">
+        <insert tableName="hesap">
+            <column name="id" valueComputed="'123e4567-e89b-12d3-a456-426614174000'::uuid"/>
+            <column name="hesap_sahip_kimlik_no" value="12345678901"/>
+            <column name="hesap_sahip_ad" value="Test"/>
+            <column name="hesap_sahip_soyad" value="Kullanici"/>
+            <column name="hesap_turu" value="VADESIZ"/>
+            <column name="bakiye" valueNumeric="1000.00"/>
+            <column name="created_at" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="updated_at" valueComputed="CURRENT_TIMESTAMP"/>
+        </insert>
+
+        <insert tableName="hesap_hareketi">
+            <column name="hesap_id" valueComputed="'123e4567-e89b-12d3-a456-426614174000'::uuid"/>
+            <column name="hareket_turu" value="PARA_YATIRMA"/>
+            <column name="miktar" valueNumeric="1000.00"/>
+            <column name="islem_tarihi" valueComputed="CURRENT_TIMESTAMP"/>
+            <column name="aciklama" value="İlk para yatırma"/>
+            <column name="bakiye" valueNumeric="1000.00"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog> 
